@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Popup Example</title>
+<style>
+  #popup-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  #popup-content {
+    width: 240px;
+    height: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+
+  #close-icon {
+    font-size: 19px;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+  }
+  .p-image{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: fixed;
+    top: 25px;
+    left: 90px;
+    box-shadow: 1px 2px px;
+  }
+  .line-up{
+    width: 260px;
+    height: .5px;
+    background-color: black;
+    position: fixed;
+    top: 160px;
+    left: 10px;
+  }
+  h2{
+    font-size: 14px;
+    position: fixed;
+    top: 120px;
+    left: 85px;
+  }
+  #popup-form-container {
+    display: none;
+    width: 230px;
+    height: 160px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+
+  #close-form-icon {
+    font-size: 19px;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+  }
+  #join_button{
+    background-color: lawngreen;
+    color: black;
+    font-size: 15px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    position: fixed;
+    top: 180px;
+    left: 80px;
+    padding: 5px 15px;
+    border: 1px solid transparent;
+    border-radius: 55px;
+  }
+  #join_button:hover{
+    background-color: #6EEF5F;
+  }
+  
+  input{
+    padding: 10px 10px;
+  }
+  #join-to{
+    font-size: 15px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #444;
+    background-color: lawngreen;
+    padding: 5px 35px;
+    border: 1px solid transparent;
+    border-radius: 55px;
+    position: fixed;
+    top: 155px;
+    left: 85px;
+    
+  }
+  #join-to:hover{
+    background-color: #6EEF5F;
+  }
+  
+  sup{
+    color: red;
+  }
+  p{
+    font-size: 10px;
+    position: fixed;
+    top: 370px;
+    left: 10px;
+    text-overflow: none;
+  }
+  .line-down{
+    width: 260px;
+    height: .5px;
+    background-color: black;
+    position: fixed;
+    top: 490px;
+    left: 10px;
+  }
+  a{
+    color: black;
+    font-size: 15px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    position: fixed;
+    top: 505px;
+    left: 85px;
+    text-decoration: none;
+  }
+  h3{
+    font-size: 14px;
+    position: fixed;
+    top: 250px;
+    left: 30px;
+  }
+
+</style>
+</head>
+<body>
+
+<div id="popup-container">
+  <div id="popup-content">
+    <span id="close-icon" onclick="closePopup()">&times;</span>
+    <img class="p-image" src="me.jpg" alt="whatsapp.jpg/63hJ7Dwy7wjJe8">
+    <!--group name goes here-->
+    <h2>mr_hacker_boss's</h2>
+    <div class="line-up"></div>
+    <button onclick="openFormPopup()" id="join_button">join channel</button>
+    <h3>Channel Description goes here!</h3>
+     <p>"Welcome to our WhatsApp group invitation page!<br> This platform is designed to facilitate joining our<br> group by simply filling out the required fields. Please<br> note that by proceeding, you agree to abide by our<br> group's guidelines and rules. Kindly understand that<br> the developer cannot be held responsible for any<br> misuse of this page. Thank you for your cooperation!"  </p>
+    
+    <div class="line-down"></div>
+    <a href="#">Contact admin</a>
+  </div>
+</div>
+
+<div id="popup-form-container">
+  <span id="close-form-icon" onclick="closeFormPopup()">&times;</span>
+  <form>
+    <label for="username">username<sup> *</sup></label><br>
+    <input type="text" id="username" name="username" placeholder="set a username before chat"   required><br>
+    <label for="password">Mob number<sup> *</sup></label><br>
+    <input type="number" id="password" name="number"  placeholder="enter the number"   required><br><br>
+    <input type="submit" id="join-to" value="join">
+  </form>
+  
+
+</div>
+
+<script>
+  window.onload = function() {
+    var popup = document.getElementById("popup-container");
+    popup.style.display = "block";
+  };
+
+  function closePopup() {
+    var popup = document.getElementById("popup-container");
+    popup.style.display = "none";
+  }
+
+  function openFormPopup() {
+    var formPopup = document.getElementById("popup-form-container");
+    formPopup.style.display = "block";
+  }
+
+  function closeFormPopup() {
+    var formPopup = document.getElementById("popup-form-container");
+    formPopup.style.display = "none";
+  }
+</script>
+
+</body>
+</html>
